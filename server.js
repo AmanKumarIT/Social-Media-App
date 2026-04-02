@@ -15,7 +15,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5174",
   "https://social-media-app-pfgk.vercel.app",
-  "https://social7.netlify.app/login"
+  "https://social7.netlify.app"
 ];
 
 // ✅ FIXED CORS (KEEP THIS)
