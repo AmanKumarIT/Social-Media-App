@@ -13,11 +13,11 @@ const app = express();
 
 // ✅ ADD YOUR FRONTEND URL HERE
 const allowedOrigins = [
-  "http://localhost:3000",
+  "http://localhost:5174",
   "https://social-media-app-pfgk.vercel.app"
 ];
 
-// ✅ UPDATED CORS (FIXED PROPERLY)
+// ✅ FIXED CORS (KEEP THIS)
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -29,12 +29,9 @@ app.use(cors({
   credentials: true
 }));
 
-// ✅ HANDLE PREFLIGHT (THIS WAS MISSING)
-app.options('*', cors());
-
 const server = http.createServer(app);
 
-// ✅ UPDATED SOCKET CORS (ONLY CHANGE)
+// ✅ SOCKET CORS
 const io = new Server(server, {
   cors: {
     origin: allowedOrigins,
