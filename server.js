@@ -14,7 +14,8 @@ const app = express();
 // ✅ ADD YOUR FRONTEND URL HERE
 const allowedOrigins = [
   "http://localhost:5174",
-  "https://social-media-app-pfgk.vercel.app"
+  "https://social-media-app-pfgk.vercel.app",
+  "https://social7.netlify.app/login"
 ];
 
 // ✅ FIXED CORS (KEEP THIS)
