@@ -17,11 +17,20 @@ const allowedOrigins = [
   "https://social-media-app-pfgk.vercel.app"
 ];
 
-// ✅ UPDATED CORS (ONLY CHANGE)
+// ✅ UPDATED CORS (FIXED PROPERLY)
 app.use(cors({
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
+
+// ✅ HANDLE PREFLIGHT (THIS WAS MISSING)
+app.options('*', cors());
 
 const server = http.createServer(app);
 
@@ -51,7 +60,6 @@ app.use('/api/posts', require('./routes/postRoutes'));
 const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-
 
 // const express = require('express');
 // const dotenv = require('dotenv');
