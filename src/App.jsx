@@ -81,7 +81,7 @@ function App() {
       <Router>
 
         {/* ✅ Suspense wrapper added */}
-        <Suspense fallback={<PageLoader />}>
+        <Suspense fallback={<div style={{ textAlign: "center", marginTop: "20px" }}>Loading...</div>}>
 
           <Routes>
             <Route path="/" element={<PrivateRoute><Feed /></PrivateRoute>} />
