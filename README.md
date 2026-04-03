@@ -1,16 +1,34 @@
-# React + Vite
+### Frontend
+- **React.js** (Vite)
+- **React Router DOM** for navigation
+- **Axios** for API requests
+- **Material UI (@mui/material)** for styling (No Tailwind CSS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌟 Features
 
-Currently, two official plugins are available:
+- **Authentication**: JWT-based User Signup and Login. Protected routes.
+- **Create Post**: Users can publish posts containing text, an image, or both.
+- **Feed**: View all posts from all users in reverse chronological order.
+- **Like System**: Toggle likes on any post, updating instantly.
+- **Comment System**: Add comments to posts with real-time UI updates.
+- **Responsive UI**: Card-based, clean design utilizing Material UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+Frontend Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Set up environment variables. Open `frontend/.env` (if custom API url needed):
+   ```env
+   VITE_API_URL=http://localhost:5000/api
+   ```
+3. Start the frontend development server:
+   ```bash
+   npm run dev
+   ```
+5. Open your browser and go to `http://localhost:5173`.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
